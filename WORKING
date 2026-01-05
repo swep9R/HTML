@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.basik {
+    width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 600px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Ефект тіні */
+}
+header {
+    height: 120px;
+    color: white;
+    padding: 10px;
+}
+.subject {
+    float: left;
+    text-shadow: 2px 2px 4px #000; /* Тінь тексту */
+}
+nav {
+    display: table-cell;
+    width: 200px;
+    vertical-align: top;
+    background: #f0f0f0;
+    padding: 10px;
+}
+.navBut {
+    padding: 10px;
+    margin-bottom: 5px;
+    background: linear-gradient(to bottom, #ffffff, #e0e0e0); /* Градієнт */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Скруглення */
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s; /* Анімація переходу */
+}
+.navBut:hover {
+    background: #595959;
+    color: white;
+    transform: scale(1.05); /* Ефект збільшення */
+}
+.cont {
+    display: table-cell;
+    padding: 20px;
+    width: 600px;
+}
+input, select {
+    margin: 5px;
+    border-radius: 3px;
+    border: 1px solid #999;
+}
