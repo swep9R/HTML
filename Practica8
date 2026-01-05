@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <title>Практична робота №8</title>
+</head>
+<body>
+<div class="basik">
+    <header style="background: linear-gradient(to top,#a9aaa9 , #595959);">
+        <div class="subject"><h1>Розробка захищених <br> веб-застосунків</h1></div>
+        <h1 style="float: right;">Практична №8</h1>
+    </header>
+    <div style="display:table; width:100%;">
+        <nav>
+            <a href="index.html"><div class="navBut">Головна</div></a>
+        </nav>
+        <div class="cont">
+            <h3>Форма замовлення послуги</h3>
+            <form action="Practik8.php" method="POST">
+                <p>Ваше ім'я: <br><input type="text" name="UserName" required></p>
+                <p>Оберіть послугу: <br>
+                    <select name="service">
+                        <option value="Веб-дизайн">Веб-дизайн</option>
+                        <option value="Розробка API">Розробка API</option>
+                        <option value="Тестування">Тестування</option>
+                    </select>
+                </p>
+                <p>Коментар до замовлення: <br>
+                    <textarea name="comment" rows="4" cols="40"></textarea>
+                </p>
+                <input type="submit" class="navBut" value="Надіслати замовлення">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
