@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Практична №4</title>
+    <script>
+        function solveQuad() {
+            let a = parseFloat(document.getElementById('An').value);
+            let b = parseFloat(document.getElementById('Bn').value);
+            let c = parseFloat(document.getElementById('Cn').value);
+            let d = b*b - 4*a*c;
+            let res = document.getElementById('res');
+            if (d < 0) res.innerHTML = "Коренів немає (D < 0)";
+            else if (d == 0) res.innerHTML = "x = " + (-b / (2*a));
+            else {
+                let x1 = (-b + Math.sqrt(d)) / (2*a);
+                let x2 = (-b - Math.sqrt(d)) / (2*a);
+                res.innerHTML = "x1 = " + x1.toFixed(2) + ", x2 = " + x2.toFixed(2);
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="basik">
+    <header style="background: #595959;">
+        <div class="subject"><h1>Алгебра JavaScript</h1></div>
+    </header>
+    <div style="display:table; width:100%;">
+        <nav><div class="navBut" onclick="location.href='index.html'">Назад</div></nav>
+        <div class="cont">
+            <h3>Квадратне рівняння</h3>
+            A: <input type="text" id="An" size="3"> 
+            B: <input type="text" id="Bn" size="3"> 
+            C: <input type="text" id="Cn" size="3">
+            <button onclick="solveQuad()">Розрахувати</button>
+            <p id="res"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
