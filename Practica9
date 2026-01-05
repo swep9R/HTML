@@ -1,0 +1,30 @@
+<?php
+    if(isset($_POST['log'])) {
+        setcookie("login", $_POST['log'], time() + 3600);
+        header("Location: Practik9.php");
+    }
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="basik">
+    <div class="cont">
+        <?php if(!isset($_COOKIE['login'])): ?>
+            <form method="POST">
+                Логін: <input type="text" name="log"><br>
+                Пароль: <input type="password" name="pass"><br>
+                <input type="submit" value="Увійти">
+            </form>
+        <?php else: ?>
+            <h3>Вітаємо, <?php echo $_COOKIE['login']; ?>!</h3>
+            <p>Ваша оцінка за семестр: 95 балів.</p>
+            <a href="logout.php">Вихід</a>
+        <?php endif; ?>
+    </div>
+</div>
+</body>
+</html>
