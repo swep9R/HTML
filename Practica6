@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <title>Практична робота №6</title>
+    <script>
+        // Функція для запиту до API ПриватБанку
+        function LoadFileJson(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    let table = document.getElementById('currencyTable');
+                    let html = "<tr><th>Валюта</th><th>Купівля</th><th>Продаж</th></tr>";
+                    
+                    data.forEach(item => {
+                        html += `<tr>
+                            <td>${item.ccy}</td>
+                            <td>${parseFloat(item.buy).toFixed(2)}</td>
+                            <td>${parseFloat(item.sale).toFixed(2)}</td>
+                        </tr>`;
+                    });
+                    table.innerHTML = html;
+                })
+                .catch(error => console.error('Помилка завантаження:', error));
+        }
+    </script>
+</head>
+<body onload="LoadFileJson('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')">
+<div class="basik">
+    <header style="background: linear-gradient(to top,#a9aaa9 , #595959);">
+        <div class="subject"><h1>Розробка захищених <br> веб-застосунків</h1></div>
+        <h1 style="float: right;">Практична №6</h1>
+    </header>
+    <div style="display:table; width:100%;">
+        <nav>
+            <a href="index.html"><div class="navBut">Головна</div></a>
+            <div class="navBut" onclick="location.reload()">Оновити курс</div>
+        </nav>
+        <div class="cont">
+            <h3>Актуальний курс валют (ПриватБанк API)</h3>
+            <p>Дані завантажуються за допомогою методу fetch() у форматі JSON.</p>
+            <table id="currencyTable" border="1" style="width:100%; text-align:center; border-collapse: collapse;">
+                <tr><td colspan="3">Завантаження даних...</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
