@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Практична №7 - PHP</title>
+</head>
+<body>
+<div class="basik">
+    <header style="background: #2c3e50;">
+        <div class="subject"><h1>Серверний PHP</h1></div>
+    </header>
+    <div class="cont">
+        <h3>Розрахунок на стороні сервера</h3>
+        <?php
+            $a = 32; $b = 4; $c = -6;
+            echo "<p>Рівняння: {$a}x² + {$b}x + {$c} = 0</p>";
+            $d = pow($b, 2) - 4 * $a * $c;
+            if ($d > 0) {
+                $x1 = (-$b + sqrt($d)) / (2 * $a);
+                $x2 = (-$b - sqrt($d)) / (2 * $a);
+                echo "<b>Результат:</b> x1 = $x1, x2 = $x2";
+            } else {
+                echo "Коренів немає";
+            }
+        ?>
+    </div>
+</div>
+</body>
+</html>
