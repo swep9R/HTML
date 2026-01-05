@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Практична №5</title>
+    <script>
+        class Dish {
+            constructor(name, cal, weight) {
+                this.name = name;
+                this.calories = cal; // на 100г
+                this.weight = weight;
+            }
+            calcTotal() {
+                return (this.calories * this.weight) / 100;
+            }
+        }
+        function showDish() {
+            let myDish = new Dish("Борщ", 45, parseFloat(document.getElementById('w').value));
+            document.getElementById('res').innerHTML = "Ви отримаєте " + myDish.calcTotal() + " ккал";
+        }
+    </script>
+</head>
+<body>
+<div class="basik">
+    <header style="background: #595959;">
+        <div class="subject"><h1>Об'єкти JS</h1></div>
+    </header>
+    <div style="display:table; width:100%;">
+        <nav><div class="navBut">Практична №5</div></nav>
+        <div class="cont">
+            <h3>Страва: Борщ (45 ккал/100г)</h3>
+            Скільки грамів ви з'їли? <input type="text" id="w">
+            <button onclick="showDish()">Порахувати калорії</button>
+            <p id="res"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
